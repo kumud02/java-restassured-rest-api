@@ -13,11 +13,12 @@ public class getRefreshToken extends BaseRequest {
     @Description("Valid Request is passed")
     @Test
     void validRequestIsSubmitted() {
-        String requestBody = String.format("""
-                {
-                  "refresh": "%s"
-                }
-                """, getRefreshToken());
+
+        String requestBody = "    {\n" +
+                "                  \"refresh\": \""+getRefreshToken()+"\"\n" +
+                "                }";
+
+
 
         request
                 .contentType(ContentType.JSON)
@@ -33,11 +34,9 @@ public class getRefreshToken extends BaseRequest {
     @Description("Invalid Access Token is Passed")
     @Test
     void invalidRefreshTokenIsPassed() {
-        String requestBody = String.format("""
-                {
-                  "refresh": "%s"
-                }
-                """, "invalidAccessToken");
+        String requestBody = "{\n" +
+                "                  \"refresh\": \"invalidAccessToken\"\n" +
+                "                }";
 
         request
                 .contentType(ContentType.JSON)

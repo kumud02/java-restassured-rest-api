@@ -31,12 +31,12 @@ public class BaseRequest {
 
 
     public String getAccessToken() {
-        String requestBody = String.format("""
-                {
-                    "email": "%s",
-                    "password": "%s"
-                }
-                """, prop.getProperty("email"), prop.getProperty("password"));
+        String requestBody = "{\n" +
+                "                    \"email\": \""+prop.getProperty("email")+"\",\n" +
+                "                    \"password\": \""+prop.getProperty("password") +"\"\n" +
+                "                }";
+
+
 
                 RestAssured.baseURI = "https://" + prop.getProperty("server") + "/api/v1";
                 request = RestAssured.given().contentType(ContentType.JSON);
@@ -51,12 +51,10 @@ public class BaseRequest {
     }
 
     public String getRefreshToken() {
-        String requestBody = String.format("""
-                {
-                    "email": "%s",
-                    "password": "%s"
-                }
-                """, prop.getProperty("email"), prop.getProperty("password"));
+        String requestBody = "{\n" +
+                "                    \"email\": \""+prop.getProperty("email")+"\",\n" +
+                "                    \"password\": \""+prop.getProperty("password") +"\"\n" +
+                "                }";
 
 
         RestAssured.baseURI = "https://" + prop.getProperty("server") + "/api/v1";

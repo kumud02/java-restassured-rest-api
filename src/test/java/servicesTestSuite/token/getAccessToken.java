@@ -13,12 +13,10 @@ public class getAccessToken extends BaseRequest {
     @Description("Submit Valid Get Token Request")
     @Test
     void verifyValidGetTokenRequest(){
-        String requestBody = String.format("""
-                {
-                    "email": "%s",
-                    "password": "%s"
-                }
-                """, prop.getProperty("email"), prop.getProperty("password"));
+        String requestBody = "{\n" +
+                "                    \"email\": \""+prop.getProperty("email")+"\",\n" +
+                "                    \"password\": \""+prop.getProperty("password") +"\"\n" +
+                "                }";
 
         request
                 .body(requestBody)
@@ -53,12 +51,11 @@ public class getAccessToken extends BaseRequest {
     @Description("Verify Response when invalid credential is passed")
     @Test
     void testWhenPassedInvalidCredentials() {
-        String requestBody = String.format("""
-                {
-                    "email": "%s",
-                    "password": "%s"
-                }
-                """, "randomemail@test.com", "randomPassword");
+        String requestBody = "{\n" +
+                "                    \"email\": \""+prop.getProperty("email")+"\",\n" +
+                "                    \"password\": \""+prop.getProperty("password") +"\"\n" +
+                "                }";
+
 
         request
                 .body(requestBody)
@@ -74,12 +71,10 @@ public class getAccessToken extends BaseRequest {
     @Description("Validate for invalid methods")
     @Test
     void validateWhenInvalidMethodIsPassed() {
-        String requestBody = String.format("""
-                {
-                    "email": "%s",
-                    "password": "%s"
-                }
-                """, prop.getProperty("email"), prop.getProperty("password"));
+        String requestBody = "{\n" +
+                "                    \"email\": \""+prop.getProperty("email")+"\",\n" +
+                "                    \"password\": \""+prop.getProperty("password") +"\"\n" +
+                "                }";
 
         request
                 .body(requestBody)
