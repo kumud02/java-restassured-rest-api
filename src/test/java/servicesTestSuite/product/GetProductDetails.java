@@ -6,11 +6,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import servicesTestSuite.BaseRequest;
 
-import java.lang.module.ResolutionException;
-
-import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.equalTo;
-
 public class GetProductDetails extends BaseRequest {
 
     // https://test.api.testamplify.io/api/v1/products/detail/samsung-galaxy-s22-ultra-1/

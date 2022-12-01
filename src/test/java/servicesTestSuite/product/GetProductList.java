@@ -1,6 +1,5 @@
 package servicesTestSuite.product;
 
-import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import servicesTestSuite.BaseRequest;
 
