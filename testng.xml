@@ -5,6 +5,7 @@
         <classes>
             <class name="servicesTestSuite.token.getRefreshToken"/>
             <class name="servicesTestSuite.token.getAccessToken" />
+            <class name="testrunner.CucumberRunner" />
         </classes>
     </test>
 </suite>

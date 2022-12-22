@@ -53,7 +53,7 @@ public class getAccessToken extends BaseRequest {
     void testWhenPassedInvalidCredentials() {
         String requestBody = "{\n" +
                 "                    \"email\": \""+prop.getProperty("email")+"\",\n" +
-                "                    \"password\": \""+prop.getProperty("password") +"\"\n" +
+                "                    \"password\": \""+"invalid_token" +"\"\n" +
                 "                }";
 
 
